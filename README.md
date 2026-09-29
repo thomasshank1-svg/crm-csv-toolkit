@@ -1,5 +1,7 @@
 # Pipeline
 
+![Project screenshot](docs/screenshot.png)
+
 Pipeline is a compact CRM and CSV toolkit. It tracks leads by stage, validates imported CSV rows, skips existing emails, exports clean CSV, and includes command-line utilities for import/export.
 
 ## Run
