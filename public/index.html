@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pipeline</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="theme.css">
+  <script defer src="common.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div><strong>Pipeline</strong><span>CRM and CSV toolkit</span></div>
+    <a href="/">Local demo</a>
+  </header>
+  <main class="shell">
+    <section class="hero">
+      <p class="badge">Database and scripts</p>
+      <h1>Import messy lead lists and keep the pipeline moving.</h1>
+      <p>CSV rows are validated, duplicate emails are skipped, and every stage is stored in SQLite.</p>
+    </section>
+    <section class="grid">
+      <div class="panel">
+        <div class="panel-title">
+          <h2>Leads</h2>
+          <button id="download">Download CSV</button>
+        </div>
+        <div id="stats" class="stats"></div>
+        <div id="leads" class="list"></div>
+      </div>
+      <aside class="panel stack">
+        <form id="leadForm">
+          <h2>Add lead</h2>
+          <label>Name <input name="name" required></label>
+          <label>Email <input name="email" type="email" required></label>
+          <label>Company <input name="company"></label>
+          <label>Value <input name="value" inputmode="decimal" placeholder="2500"></label>
+          <label>Stage <select name="stage" id="stageSelect"></select></label>
+          <label>Notes <textarea name="notes"></textarea></label>
+          <button>Add lead</button>
+        </form>
+        <form id="importForm">
+          <h2>CSV import</h2>
+          <textarea name="csv" rows="8">name,email,company,value,stage,notes
+Megan West,megan.west@example.com,West Studio,3200,New,Needs web redesign</textarea>
+          <button>Import CSV</button>
+        </form>
+      </aside>
+    </section>
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+  </main>
+</body>
+</html>
